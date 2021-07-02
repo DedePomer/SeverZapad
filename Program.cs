@@ -62,6 +62,7 @@ namespace Северо_запад
             string s = "F = "+F ;
             Debug.WriteLine(s);
             File.WriteAllText(path, s);
+           
           
             }
     }
