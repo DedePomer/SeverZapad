@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
 
 namespace Северо_запад
 {
@@ -13,6 +14,14 @@ namespace Северо_запад
                 vector[i] = Convert.ToInt32(Smas[i]);
             }
         }
+        static void InfoVectora(int[] vector)// метод выводящий отладочные данные
+        {
+            Debug.WriteLine("Вектор "+ vector);
+            foreach (var n in vector)
+            {
+                Debug.WriteLine(n);
+            }
+        }
         static void Main(string[] args)
         {
             string path = "Входные данные.txt";
@@ -21,11 +30,14 @@ namespace Северо_запад
             M = Data.Length - 2;
             string[] Nlenght = Data[2].Split(' ');
             N = Nlenght.Length;
+            Debug.WriteLine("Значение N = "+N+ " Значение M = "+M);
             int[] VectorN = new int[N];
             int[] VectorM = new int[M];
 
             ZapolnVectora(VectorN, Data[0]);//Заполнение векторов
             ZapolnVectora(VectorM, Data[1]);
+            InfoVectora(VectorN);
+            InfoVectora(VectorM);
 
             int[,] MatrixA = new int[M, N];
             int[,] MatrixB = new int[M, N];
@@ -54,6 +66,7 @@ namespace Северо_запад
                 }
             }
             string s = "F = "+F ;
+            Debug.WriteLine(s);
             File.WriteAllText(path, s);
           
             }
