@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Северо_запад
 {
-    class Class1
+    public class Class1
     {
         public  int[,] Severo_Zapad(int [] VectorM, int[] VectorN, int M, int N, int[,] MatrixB) // Сам метод
         {

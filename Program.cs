@@ -4,15 +4,16 @@ using System.Diagnostics;
 
 namespace Северо_запад
 {
-    class Program
+    public class Program
     {
-        static void ZapolnVectora(int [] vector, string s)
+        public  int [] ZapolnVectora(int [] vector, string s)
         {
             string[] Smas = s.Split(' ');
             for (int i = 0; i < vector.Length; i++)
             {
                 vector[i] = Convert.ToInt32(Smas[i]);
             }
+            return vector;
         }
         static void InfoVectora(int[] vector)// метод выводящий отладочные данные
         {
@@ -22,7 +23,7 @@ namespace Северо_запад
                 Debug.WriteLine(n);
             }
         }
-        static void Main(string[] args)
+        public  void Main(string[] args)
         {
             string path = "Входные данные.txt";
             string[] Data = File.ReadAllLines(path);//Передача данных из файла в массив
@@ -34,8 +35,8 @@ namespace Северо_запад
             int[] VectorN = new int[N];
             int[] VectorM = new int[M];
 
-            ZapolnVectora(VectorN, Data[0]);//Заполнение векторов
-            ZapolnVectora(VectorM, Data[1]);
+            VectorN=ZapolnVectora(VectorN, Data[0]);//Заполнение векторов
+            VectorM=ZapolnVectora(VectorM, Data[1]);
             InfoVectora(VectorN);
             InfoVectora(VectorM);
 
